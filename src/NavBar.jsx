@@ -3,9 +3,13 @@ import React from "react";
 const NavBar = () => {
     const [open, setOpen] = React.useState(false);
     const tlate = "transition-all ease-in-out duration-300";
-    const left = Math.ceil(screen.width * 0.12);
+    let currentRef = window.location.pathname.substring(1);
+    currentRef = currentRef.substring(0, currentRef.indexOf("/")) || currentRef;
     return (
         <>
+            <span className="fixed top-0 left-10 bg-cyan-500 text-white p-2 rounded-b-2xl font-bold">
+                {currentRef.charAt(0).toUpperCase() + currentRef.slice(1)}
+            </span>
             {open ? (
                 <div
                     className={`h-screen w-screen fixed inset-0 bg-[#0000007e] ${tlate}`}
@@ -27,9 +31,10 @@ const NavBar = () => {
                 />
             </svg>
             <div
-                className={`w-[12vw] ${tlate} bg-gray-600 h-screen fixed top-0  ${
-                    open ? `left-0` : `left-[-${left}px]`
-                } flex flex-col justify-start py-4 px-8 text-white`}
+                className={`w-[12vw] ${tlate} bg-gray-600 h-screen fixed top-0 ${
+                    open ? `left-0` : `-left-96`
+                } flex flex-col justify-start py-4 px-8 text-white
+                bg-gradient-to-t from-cyan-500 to-blue-500`}
             >
                 <p>Yeppers</p>
                 <svg

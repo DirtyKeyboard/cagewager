@@ -51,7 +51,7 @@ function Login() {
                 </h1>
                 <ToastContainer />
                 <form
-                    className="mb-16 rounded-xl border-double border-4 border-slate-200 rounded-br-[250px] flex flex-col gap-4 items-center justify-center bg-white w-[55rem] h-[50rem] bg-gradient-to-l from-cyan-500 to-blue-500 shadow-2xl"
+                    className="mb-16 rounded-xl border-double border-4 border-slate-200 rounded-br-[250px] flex flex-col gap-4 items-center justify-center bg-white max-lg:w-[80vw] w-[50rem] h-[50rem] bg-gradient-to-l from-cyan-500 to-blue-500 shadow-2xl"
                     onSubmit={handleSubmit}
                 >
                     <h1 className="text-white font-semibold">Username</h1>
