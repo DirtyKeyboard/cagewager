@@ -5,3 +5,24 @@
 html {
     scroll-behavior: smooth;
 }
+
+@layer base {
+    h1 {
+        @apply text-3xl
+    }
+    h2 {
+        @apply text-2xl
+    }
+    h3 {
+        @apply text-xl
+    }
+}
+
+@layer components {
+    .btn-sway {
+        @apply font-bold rounded-br-3xl rounded-t-lg rounded-bl-lg bg-cyan-500 hover:bg-cyan-300 hover:rounded-br-xl hover:rounded-tl-3xl text-white px-4 py-3 transition-all ease-in-out duration-150
+    }
+    .btn {
+        @apply font-bold rounded-lg bg-cyan-500 hover:bg-cyan-300 text-white px-4 py-3 hover:rounded-3xl transition-all ease-in-out duration-150
+    }
+}

@@ -4,9 +4,11 @@ const NavBar = () => {
     const [open, setOpen] = React.useState(false);
     const tlate = "transition-all ease-in-out duration-300";
     let currentRef = window.location.pathname.substring(1);
+    if (currentRef === "") currentRef = "Dashboard";
     currentRef = currentRef.substring(0, currentRef.indexOf("/")) || currentRef;
+    const navLink = "hover:underline";
     return (
-        <>
+        <div className="h-12">
             <span className="fixed top-0 left-10 bg-cyan-500 text-white p-2 rounded-b-2xl font-bold">
                 {currentRef.charAt(0).toUpperCase() + currentRef.slice(1)}
             </span>
@@ -33,17 +35,28 @@ const NavBar = () => {
             <div
                 className={`w-[12vw] ${tlate} bg-gray-600 h-screen fixed top-0 ${
                     open ? `left-0` : `-left-96`
-                } flex flex-col justify-start py-4 px-8 text-white
+                } flex flex-col justify-start gap-2 py-4 px-8 text-white
                 bg-gradient-to-t from-cyan-500 to-blue-500`}
             >
-                <p>Yeppers</p>
+                <a href="/search" className={navLink}>
+                    Find People
+                </a>
+                <a href="/grocery_lists" className={navLink}>
+                    Your Lists
+                </a>
+                <a href="/dashboard" className={navLink}>
+                    Dashboard
+                </a>
+                <a href="https://www.andrewhawileh.com" className={navLink}>
+                    My Portfolio
+                </a>
                 <svg
                     xmlns="http://www.w3.org/2000/svg"
                     fill="none"
                     viewBox="0 0 24 24"
                     strokeWidth={1.5}
                     stroke="currentColor"
-                    className="w-6 h-6 hover:cursor-pointer"
+                    className="w-7 h-7 hover:cursor-pointer bg-cyan-400 p-1 rounded-full"
                     onClick={() => setOpen(false)}
                 >
                     <path
@@ -53,7 +66,7 @@ const NavBar = () => {
                     />
                 </svg>
             </div>
-        </>
+        </div>
     );
 };
 
