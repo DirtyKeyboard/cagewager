@@ -4,6 +4,7 @@ import { set } from "../redux/userSlice";
 import { ToastContainer, toast } from "react-toastify";
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
+import ufc from "./assets/ufc-logo.png";
 
 function Login() {
     const [form, setForm] = React.useState({ username: "", password: "" });
@@ -45,13 +46,14 @@ function Login() {
     }
     return (
         <>
-            <div className="h-screen bg-gradient-to-r from-cyan-500 to-blue-500 flex justify-center items-center flex-col">
-                <h1 className="text-white text-6xl my-4">
-                    Welcome to Stock Up!
+            <div className="h-screen flex justify-center items-center flex-col">
+                <h1 className="text-white text-6xl my-4 flex flex-row justify-center gap-4">
+                    Welcome to <img src={ufc} className="w-44" />
+                    <span className="font-[orbitron]">CageWager</span>
                 </h1>
                 <ToastContainer />
                 <form
-                    className="mb-16 rounded-xl border-double border-4 border-slate-200 rounded-br-[250px] flex flex-col gap-4 items-center justify-center bg-white max-lg:w-[80vw] w-[50rem] h-[50rem] bg-gradient-to-l from-cyan-500 to-blue-500 shadow-2xl"
+                    className="mb-16 rounded-xl bg-gray-800 border-slate-200 rounded-br-[250px] flex flex-col gap-4 items-center justify-center lg:w-[60vw] w-[80vw] h-[50rem] shadow-2xl"
                     onSubmit={handleSubmit}
                 >
                     <h1 className="text-white font-semibold">Username</h1>
@@ -71,18 +73,14 @@ function Login() {
                         className="border border-black rounded-full w-64"
                     />
                     <div className="flex gap-4 items-center">
-                        <button
-                            name="login"
-                            type="submit"
-                            className="bg-blue-600 text-white font-bold p-4 rounded-2xl hover:bg-blue-400 transition-all"
-                        >
+                        <button name="login" type="submit" className="btn">
                             Log In
                         </button>
                         <span className="text-white text-lg font-bold">OR</span>
                         <button
                             name="create"
                             type="submit"
-                            className="bg-blue-600 text-white font-bold p-4 rounded-2xl hover:bg-blue-400 transition-all"
+                            className="btn-sway"
                         >
                             Create Account
                         </button>
