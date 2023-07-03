@@ -9,7 +9,7 @@ const NavBar = () => {
     const navLink = "hover:underline";
     return (
         <div className="h-12">
-            <span className="fixed top-0 left-10 bg-cyan-500 text-white p-2 rounded-b-2xl font-bold">
+            <span className="fixed top-0 left-10 bg-red-600 text-white p-2 rounded-b-2xl font-bold">
                 {currentRef.charAt(0).toUpperCase() + currentRef.slice(1)}
             </span>
             {open ? (
@@ -22,7 +22,7 @@ const NavBar = () => {
                 fill="none"
                 viewBox="0 0 24 24"
                 strokeWidth={1.5}
-                stroke="currentColor"
+                stroke="white"
                 className="w-6 h-6 hover:cursor-pointer"
                 onClick={() => setOpen(!open)}
             >
@@ -36,27 +36,25 @@ const NavBar = () => {
                 className={`w-[12vw] ${tlate} bg-gray-600 h-screen fixed top-0 ${
                     open ? `left-0` : `-left-96`
                 } flex flex-col justify-start gap-2 py-4 px-8 text-white
-                bg-gradient-to-t from-cyan-500 to-blue-500`}
+                bg-gradient-to-t from-red-800 to-red-600`}
             >
-                <a href="/search" className={navLink}>
-                    Find People
-                </a>
-                <a href="/grocery_lists" className={navLink}>
-                    Your Lists
-                </a>
                 <a href="/dashboard" className={navLink}>
                     Dashboard
                 </a>
-                <a href="https://www.andrewhawileh.com" className={navLink}>
-                    My Portfolio
+                <a href="/search" className={navLink}>
+                    Search Users
                 </a>
+                <a href="/link" className={navLink}>
+                    Link
+                </a>
+
                 <svg
                     xmlns="http://www.w3.org/2000/svg"
                     fill="none"
                     viewBox="0 0 24 24"
-                    strokeWidth={1.5}
+                    strokeWidth={4}
                     stroke="currentColor"
-                    className="w-7 h-7 hover:cursor-pointer bg-cyan-400 p-1 rounded-full"
+                    className="w-7 h-7 hover:cursor-pointer bg-red-800 p-1 rounded-lg"
                     onClick={() => setOpen(false)}
                 >
                     <path

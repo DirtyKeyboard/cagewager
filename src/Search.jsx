@@ -32,10 +32,6 @@ const Search = () => {
                     nav("/");
                 }
             }
-            //  else {
-            //     setLoading(false);
-            //     setResults([]);
-            // }
         }, 1500);
         return () => clearTimeout(delayDebounceFn);
     }, [query]);
@@ -52,7 +48,7 @@ const Search = () => {
                         setResults([]);
                         setQuery(e.target.value);
                     }}
-                    className="w-96 p-2 rounded-3xl bg-cyan-100 border-2 border-cyan-500"
+                    className="w-96 p-2 rounded-3xl"
                     placeholder="Search..."
                 />
                 {loading ? <Loader /> : null}
