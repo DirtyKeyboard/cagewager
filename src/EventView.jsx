@@ -9,8 +9,6 @@ const EventView = () => {
     const [details, setDetails] = React.useState([]);
     React.useEffect(() => {
         const getData = async () => {
-            // const dayTwo = dayOneRaw.add(7, "days").format("MMMM_DD_yyyy");
-            // const dayThree = dayOneRaw.add(7, "days").format("MMMM_DD_yyyy");
             const headers = {
                 "X-RapidAPI-Key":
                     "9e0c0ccf07msh5034fcd9c9e8340p12555cjsn516087d377c1",
