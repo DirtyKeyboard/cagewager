@@ -1,30 +1,21 @@
 import React from "react";
 import { useSelector, useDispatch } from "react-redux";
-import { set } from "../redux/userSlice";
 import NavBar from "./NavBar";
+import axios from "axios";
+import ufc from "./assets/ufc-logo.png";
 
 const Dashboard = () => {
+    const testItem = sessionStorage.getItem("testItem");
     const { user } = useSelector((state) => state.user);
     const dispatch = useDispatch();
     return (
         <>
             <NavBar />
-            <div className="flex justify-center items-center gap-4 flex-col">
-                <h1>Welcome, {user.username}</h1>
-                {/* NOTES 
-                    Dashboard should be populated with cards
-                    1: Grocery list w/ quick edit
-                    2: Friends, sorted by online ( show green dot )
-                
-                */}
-                <button
-                    className="btn"
-                    onClick={() => {
-                        dispatch(set(null));
-                    }}
-                >
-                    Log Out
-                </button>
+            <div className="flex justify-center items-center gap-4 flex-col p-4">
+                <h1 className="text-white text-6xl my-4 flex flex-row justify-center gap-4">
+                    <img src={ufc} className="w-44" />
+                    <span className="font-[orbitron]">CageWager</span>
+                </h1>
             </div>
         </>
     );
