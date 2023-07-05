@@ -3,6 +3,8 @@ import NavBar from "./NavBar";
 import moment from "moment";
 import { useParams } from "react-router-dom";
 import axios from "axios";
+import { v4 as uuid } from "uuid";
+import MatchCard from "./MatchCard";
 
 const EventView = () => {
     const { eventDate } = useParams();
@@ -20,6 +22,7 @@ const EventView = () => {
                     { headers }
                 );
                 setDetails(response.data);
+                console.log(response.data);
             } catch (error) {
                 console.error(error);
             }
@@ -33,15 +36,10 @@ const EventView = () => {
             <NavBar />
             <div className="flex flex-col items-center justify-center p-4 gap-4">
                 <h1>UFC Event - {date.format("MM/DD/YYYY")}</h1>
-                <div className="flex flex-col justify-center text-center">
+                <div className="flex flex-col justify-center text-center gap-2 w-1/2">
                     {details.length > 0
                         ? details.map((el) => (
-                              <>
-                                  <h1>
-                                      {el.matchup[0]} vs. {el.matchup[1]}{" "}
-                                      {/* //! FIGHTER NAME Stats, News, Bio | ESPN */}
-                                  </h1>
-                              </>
+                              <MatchCard key={uuid()} match={el} />
                           ))
                         : null}
                 </div>
@@ -49,5 +47,4 @@ const EventView = () => {
         </>
     );
 };
-
 export default EventView;
