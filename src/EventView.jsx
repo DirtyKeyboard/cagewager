@@ -22,7 +22,6 @@ const EventView = () => {
                     { headers }
                 );
                 setDetails(response.data);
-                console.log(response.data);
             } catch (error) {
                 console.error(error);
             }
@@ -30,19 +29,19 @@ const EventView = () => {
         getData();
     }, []);
     const date = moment(eventDate, "MMMM_DD_YYYY");
-    console.log();
     return (
         <>
             <NavBar />
             <div className="flex flex-col items-center justify-center p-4 gap-4">
                 <h1>UFC Event - {date.format("MM/DD/YYYY")}</h1>
-                <div className="flex flex-col justify-center text-center gap-2 w-1/2">
+                <div className="flex flex-col justify-center items-center text-center gap-2 w-1/2">
                     {details.length > 0
                         ? details.map((el) => (
                               <MatchCard key={uuid()} match={el} />
                           ))
                         : null}
                 </div>
+                <button className="btn-sway">Lock In Predictions</button>
             </div>
         </>
     );

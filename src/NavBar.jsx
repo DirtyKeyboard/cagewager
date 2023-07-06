@@ -43,7 +43,7 @@ const NavBar = () => {
                 />
             </svg>
             <div
-                className={`w-[12vw] ${tlate} bg-gray-600 h-screen fixed top-0 ${
+                className={`w-56 ${tlate} bg-gray-600 h-screen fixed top-0 ${
                     open ? `left-0` : `-left-96`
                 } flex flex-col justify-start gap-2 py-4 px-8 text-white
                 bg-gradient-to-t from-red-800 to-red-600`}

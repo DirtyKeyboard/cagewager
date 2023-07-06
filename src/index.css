@@ -30,3 +30,19 @@ body {
         @apply font-bold rounded-lg bg-red-600 hover:bg-red-500 text-white px-4 py-3 hover:rounded-3xl transition-all ease-in-out duration-150
     }
 }
+
+input.radio {
+    appearance: none;
+    border-radius: 50%;
+    width: 1.5rem;
+    height: 1.5rem;
+    border: 3px solid #dddddd;
+    transition: 0.2s all linear;
+    margin-right: 5px;
+    position: relative;
+    top: 4px;
+}
+
+input.radio:checked {
+    border: 6px solid #dc2626;
+}
