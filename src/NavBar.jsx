@@ -24,7 +24,7 @@ const NavBar = () => {
             </span>
             {open ? (
                 <div
-                    className={`h-screen w-screen fixed inset-0 bg-[#0000007e] ${tlate} backdrop-blur-sm`}
+                    className={`h-screen w-screen fixed bg-[#0000007e] ${tlate} backdrop-blur-sm`}
                 />
             ) : null}
             <svg
